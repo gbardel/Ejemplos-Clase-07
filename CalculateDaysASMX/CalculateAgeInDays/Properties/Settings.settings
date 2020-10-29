@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CalculateDays.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CalculateDays_DaysOperations_AgeToDays" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:51163/AgeToDays.asmx</Value>
+    </Setting>
+    <Setting Name="CalculateDays_appservicedays_DaysOperations" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://appservicedays.azurewebsites.net/DaysOperations.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

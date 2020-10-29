@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ConvertToDays">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertToDaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConvertToDaysResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DaysBetweenDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="day1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year2" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DaysBetweenDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DaysBetweenDatesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDays">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="days" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddDaysResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubtractDays">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="days" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubtractDaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubtractDaysResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConvertToDaysSoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertToDays" />
+  </wsdl:message>
+  <wsdl:message name="ConvertToDaysSoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertToDaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="DaysBetweenDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:DaysBetweenDates" />
+  </wsdl:message>
+  <wsdl:message name="DaysBetweenDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:DaysBetweenDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDaysSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDays" />
+  </wsdl:message>
+  <wsdl:message name="AddDaysSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubtractDaysSoapIn">
+    <wsdl:part name="parameters" element="tns:SubtractDays" />
+  </wsdl:message>
+  <wsdl:message name="SubtractDaysSoapOut">
+    <wsdl:part name="parameters" element="tns:SubtractDaysResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DaysOperationsSoap">
+    <wsdl:operation name="ConvertToDays">
+      <wsdl:input message="tns:ConvertToDaysSoapIn" />
+      <wsdl:output message="tns:ConvertToDaysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DaysBetweenDates">
+      <wsdl:input message="tns:DaysBetweenDatesSoapIn" />
+      <wsdl:output message="tns:DaysBetweenDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDays">
+      <wsdl:input message="tns:AddDaysSoapIn" />
+      <wsdl:output message="tns:AddDaysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubtractDays">
+      <wsdl:input message="tns:SubtractDaysSoapIn" />
+      <wsdl:output message="tns:SubtractDaysSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DaysOperationsSoap" type="tns:DaysOperationsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConvertToDays">
+      <soap:operation soapAction="http://tempuri.org/ConvertToDays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DaysBetweenDates">
+      <soap:operation soapAction="http://tempuri.org/DaysBetweenDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDays">
+      <soap:operation soapAction="http://tempuri.org/AddDays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubtractDays">
+      <soap:operation soapAction="http://tempuri.org/SubtractDays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DaysOperationsSoap12" type="tns:DaysOperationsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConvertToDays">
+      <soap12:operation soapAction="http://tempuri.org/ConvertToDays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DaysBetweenDates">
+      <soap12:operation soapAction="http://tempuri.org/DaysBetweenDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDays">
+      <soap12:operation soapAction="http://tempuri.org/AddDays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubtractDays">
+      <soap12:operation soapAction="http://tempuri.org/SubtractDays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DaysOperations">
+    <wsdl:port name="DaysOperationsSoap" binding="tns:DaysOperationsSoap">
+      <soap:address location="http://appservicedays.azurewebsites.net/DaysOperations.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DaysOperationsSoap12" binding="tns:DaysOperationsSoap12">
+      <soap12:address location="http://appservicedays.azurewebsites.net/DaysOperations.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
